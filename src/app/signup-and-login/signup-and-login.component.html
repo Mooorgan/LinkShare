@@ -1,0 +1,49 @@
+<article class="wrapper">
+  <a [routerLink]="['/']" class="logo">
+    <img
+      src="/assets/images/logo-devlinks-large.svg"
+      alt="logo of devlinks"
+      width="182.5"
+      height="40"
+    />
+  </a>
+
+  <header class="header">
+    <ng-container [linksharePortalOutlet]="'heading'"></ng-container>
+    <ng-container [linksharePortalOutlet]="'headingDescription'"></ng-container>
+  </header>
+
+  <form class="signupLogin" [formGroup]="form">
+    <!-- <div class="signupLogin__control signupLogin__email-control">
+      <label for="email" class="signupLogin__labelfor-control"
+        >Email address</label
+      >
+      <input
+        class="signupLogin__input"
+        id="email"
+        type="text"
+        placeholder="e.g. alex@gmail.com"
+      />
+    </div> -->
+    <linkshare-password></linkshare-password>
+    <linkshare-email formControlName="email"></linkshare-email>
+    <div class="signupLogin__control signupLogin__password-control">
+      <label for="password" class="signupLogin__labelfor-control"
+        >Password</label
+      >
+      <input
+        formControlName="password"
+        class="signupLogin__input"
+        id="password"
+        type="password"
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <ng-container [linksharePortalOutlet]="'buttonText'"></ng-container>
+  </form>
+
+  <aside class="account-state-info">
+    <ng-container [linksharePortalOutlet]="'accountState'"></ng-container>
+  </aside>
+</article>

@@ -1,0 +1,26 @@
+<ng-template [linksharePortal]="'heading'">
+  <h1 class="header__heading">
+    {{ url | signuploginData: signUpLoginData : 'heading' }}
+  </h1>
+</ng-template>
+
+<ng-template [linksharePortal]="'headingDescription'">
+  <p class="header__description">
+    {{ url | signuploginData: signUpLoginData : 'headingDescription' }}
+  </p>
+</ng-template>
+
+<ng-template [linksharePortal]="'buttonText'">
+  <button type="submit" class="signupLogin__button">
+    {{ url | signuploginData: signUpLoginData : 'buttonText' }}
+  </button>
+</ng-template>
+
+<ng-template [linksharePortal]="'accountState'">
+  <p class="account-state-info__question">
+    {{ url | signuploginData: signUpLoginData : 'accountState1' }}
+  </p>
+  <a class="account-state-info__link">{{
+    url | signuploginData: signUpLoginData : 'accountState2'
+  }}</a>
+</ng-template>

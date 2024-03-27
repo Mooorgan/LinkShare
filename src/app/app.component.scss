@@ -1,0 +1,13 @@
+@use '../scss/utils' as u;
+
+.test {
+  @include u.getFont(boldLarge);
+}
+
+.flex {
+  @include u.flexBox(u.rem(50), center, center);
+}
+
+.grid {
+  @include u.grid(repeat(3, 100px), null, 60px, null, center, center);
+}

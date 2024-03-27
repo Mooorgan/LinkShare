@@ -1,0 +1,134 @@
+@use '../../scss/utils' as u;
+
+:host {
+  --content-small: #{u.rem(311)};
+  --content-big: #{u.rem(476)};
+  background-color: var(--white-color);
+  @include u.getFont(regularMedium);
+}
+
+.wrapper {
+  margin-inline: auto;
+  max-width: var(--content-small);
+  width: calc(100% - u.rem(32));
+
+  @include u.breakpoint-up(medium) {
+    margin-inline: 0;
+    max-width: var(--content-big);
+    width: calc(100% - u.rem(40));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.logo {
+  margin-block-start: u.rem(32);
+  margin-block-end: u.rem(64);
+  display: inline-block;
+
+  @include u.breakpoint-up(medium) {
+    margin-block-end: u.rem(91);
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.header {
+  margin-block-end: u.rem(40);
+
+  &__heading {
+    font-weight: bold;
+    font-size: u.rem(24);
+    line-height: 150%;
+    color: var(--dark-grey-color);
+    margin-block-end: u.rem(8);
+  }
+
+  &__description {
+    color: var(--grey-color);
+  }
+}
+
+.signupLogin {
+  @include u.flexBox(u.rem(24), null, null, column);
+  margin-block-end: u.rem(24);
+
+  &__control {
+    @include u.flexBox(u.rem(4), null, null, column);
+  }
+
+  &__email-control {
+    position: relative;
+    &::after {
+      content: url('/assets/images/icon-email.svg');
+      position: absolute;
+      width: u.rem(16);
+      height: u.rem(16);
+      left: 16px;
+      top: 42px;
+    }
+  }
+
+  &__password-control {
+    position: relative;
+    &::after {
+      content: url('/assets/images/icon-password.svg');
+      position: absolute;
+      width: u.rem(16);
+      height: u.rem(16);
+      left: 16px;
+      top: 42px;
+    }
+  }
+
+  &__labelfor-control {
+    color: var(--dark-grey-color);
+    @include u.getFont(regularSmall, null, lh);
+    margin-block-end: u.rem(4);
+  }
+
+  &__input {
+    @include u.getFont(regularMedium, ff, lh);
+    border-radius: u.rem(8);
+    padding-block: u.rem(12);
+    padding-inline: u.rem(44) u.rem(12);
+    border: u.rem(1) solid var(--borders-color);
+    // height: u.rem(48); //padding-block or height,both does same visually
+    position: relative;
+    color: var(--dark-grey-color);
+  }
+
+  ::placeholder {
+    opacity: 0.5;
+    color: var(--dark-grey-color);
+  }
+
+  &__button {
+    color: var(--white-color);
+    @include u.getFont(boldMedium);
+    background-color: var(--purple-color);
+    padding-block: u.rem(11);
+    border-radius: u.rem(8);
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.account-state-info {
+  @include u.flexBox(u.rem(5), null, center, column);
+
+  @include u.breakpoint-up(medium) {
+    @include u.flexBox(u.rem(4), center, center, row);
+  }
+
+  &__question {
+    color: var(--grey-color);
+  }
+
+  &__link {
+    color: var(--purple-color);
+    cursor: pointer;
+  }
+}
